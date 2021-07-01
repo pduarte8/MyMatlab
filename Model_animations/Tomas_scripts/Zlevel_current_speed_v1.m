@@ -1,7 +1,7 @@
 clear;
 
 % Plot parameters
-sim_label = 'K160_Sim25';
+sim_label = 'K160_Sim31';
 %
 case_label = 'subglacial';
 % case_label = 'surface';
@@ -30,7 +30,7 @@ switch case_label
         % Grid file
         gname = '/cluster/shared/arcticfjord/run_Kongsfjorden-160m_present_subglacial/kongsfjorden_160m_grid_present.nc';
         % Data file directory
-        dir_data = '/cluster/work/users/pduarte/tmproms/run/run_Kongsfjorden-160m_present_subglacial/';
+        dir_data = '/tos-project3/NS9081K/NORSTORE_OSL_DISK/NS9081K/K160_bgc/ThirdRoundOfSimulations/Sim31/';
         % file list
         %file_list = sprintf('files_%s_%s_%s.txt', sim_label,case_label,month);
     case 'future'

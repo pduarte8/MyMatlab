@@ -1,7 +1,7 @@
 clear;
 
 % Plot parameters
-sim_label = 'K160_Sim25';
+sim_label = 'K160_Sim31';
 %
 case_label = 'subglacial';
 % case_label = 'surface';
@@ -15,11 +15,11 @@ case_label = 'subglacial';
 % Depth range : water depths are negative
 %               use large positive value e.g. 99 to include sea surface
 %depth_range = [ -10   99];  range_label = '0to10m';
- depth_range = [ -30  -20];  range_label = '20to30m';
+% depth_range = [ -30  -20];  range_label = '20to30m';
 % depth_range = [ -55  -45];  range_label = '45to55m';
 % depth_range = [ -80  -70];  range_label = '70to80m';
 % depth_range = [-105  -95];  range_label = '95to105m';
-
+depth_range = [ -300  00];  range_label = '0to300m';
 label = sprintf('%s_%s_%s', case_label,month,range_label);
 
 t0 = datenum([1948 1 1 0 0 0]);
@@ -30,7 +30,7 @@ switch case_label
         % Grid file
         gname = '/cluster/shared/arcticfjord/run_Kongsfjorden-160m_present_subglacial/kongsfjorden_160m_grid_present.nc';
         % Data file directory
-        dir_data = '/cluster/work/users/pduarte/tmproms/run/run_Kongsfjorden-160m_present_subglacial/';
+        dir_data = '/tos-project3/NS9081K/NORSTORE_OSL_DISK/NS9081K/K160_bgc/ThirdRoundOfSimulations/Sim31/';
         %dir_data = '/tos-project3/NS9081K/NORSTORE_OSL_DISK/NS9081K/K160_bgc/SecondRoundOfSimulations/Sim23_repeated/';
         % file list
         %file_list = sprintf('files_%s_%s_%s.txt', sim_label,case_label,month);
@@ -52,7 +52,7 @@ switch case_label
         error('Not a valid case.')
 end
 
-prename = 'ocean_avg';
+prename = 'ocean_avg_';
 
 file = struct('name',{});
 file_len = 1;
@@ -108,7 +108,7 @@ qlat = [reshape(lat(q1,q2),[1 qlen]) 79.32];
 
 % Set figure frame
 Fig1 = figure('Position', [200 200 900 600]);
-index = 36;
+index = 1;
 for i=1:file_len
     %disp(file(i).name);
     index = index + 1;
